@@ -1,0 +1,14 @@
+// First char "/" in line is comment
+// First char "#" in line is fraction
+// If not line is class
+#Fraction2
+Hunter
+Sniper
+Killer
+//Comment
+Ghoust
+#Teletubis
+//Next Comment
+Poo
+Foo
+Thinky
