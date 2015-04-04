@@ -179,7 +179,7 @@ forward Cmod_OnClientUseItem(client, ItemID:id);
 stock Cmod_GetINT(const client){
 	new _point;
 	_point += Cmod_GetClientINT(client);
-	_point += Cmod_GetClassINT(client);
+	_point += Cmod_GetClassINT(Cmod_GetClientClass(client));
 	_point += Cmod_GetBonusINT(client);
 	return _point;
 }
@@ -187,7 +187,7 @@ stock Cmod_GetINT(const client){
 stock Cmod_GetCON(const client){
 	new _point;
 	_point += Cmod_GetClientCON(client);
-	_point += Cmod_GetClassCON(client);
+	_point += Cmod_GetClassCON(Cmod_GetClientClass(client));
 	_point += Cmod_GetBonusCON(client);
 	return _point;
 }
@@ -195,7 +195,7 @@ stock Cmod_GetCON(const client){
 stock Cmod_GetSTR(const client){
 	new _point;
 	_point += Cmod_GetClientSTR(client);
-	_point += Cmod_GetClassSTR(client);
+	_point += Cmod_GetClassSTR(Cmod_GetClientClass(client));
 	_point += Cmod_GetBonusSTR(client);
 	return _point;
 }
@@ -203,7 +203,7 @@ stock Cmod_GetSTR(const client){
 stock Cmod_GetDEX(const client){
 	new _point;
 	_point += Cmod_GetClientDEX(client);
-	_point += Cmod_GetClassDEX(client);
+	_point += Cmod_GetClassDEX(Cmod_GetClientClass(client));
 	_point += Cmod_GetBonusDEX(client);
 	return _point;
 }
