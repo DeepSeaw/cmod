@@ -86,7 +86,7 @@ public Stats_Native_ShowStatsMenu(Handle:plugin, numParams){
 }
 
 public Stats_Native_GetResistance(Handle:plugin, numParams){
-	return _:FloatMul(float(Stats_GetSTR(GetNativeCell(1))), 0.2); 
+	return _:FloatMul(float(Stats_GetSTR(GetNativeCell(1))), 0.002); 
 }
 
 
