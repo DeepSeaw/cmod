@@ -89,8 +89,8 @@ public ClassSys_Register(Handle:plugin, numParams)
 	
 	g_hCmodClassPlugin[g_iCmodClassCount] = plugin;
 	
-	GetNativeString(1, g_sCmodClassName[g_iCmodClassCount], sizeof(g_sCmodClassName));
-	GetNativeString(2, g_sCmodClassDesc[g_iCmodClassCount], sizeof(g_sCmodClassDesc));	
+	GetNativeString(1, g_sCmodClassName[g_iCmodClassCount], sizeof(g_sCmodClassName[]));
+	GetNativeString(2, g_sCmodClassDesc[g_iCmodClassCount], sizeof(g_sCmodClassDesc[]));	
 	
 	g_iCmodClassINT[g_iCmodClassCount] = GetNativeCell(3);
 	g_iCmodClassCON[g_iCmodClassCount] = GetNativeCell(4);
