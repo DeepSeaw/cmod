@@ -116,11 +116,11 @@ native Float:Cmod_GetResistance(const client);
  * ----------------------------------------
  */
   
-native Cmod_GetExp(const client);
+native Cmod_GetClientExp(const client);
 
-native Cmod_SetExp(const client, const value);
+native Cmod_SetClientExp(const client, const value);
 
-native Cmod_AddExp(const client, const value);
+native Cmod_AddClientExp(const client, const value);
 
 native Cmod_GetBonusExp(const client);
 

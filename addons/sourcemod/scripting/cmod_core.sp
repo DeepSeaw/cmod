@@ -93,9 +93,9 @@ public APLRes:AskPluginLoad2(Handle:myself, bool:late, String:error[], err_max)
 	
 	#if defined XP_SYS
 		#if defined XP_NATIVE
-			CreateNative("Cmod_GetExp", Xp_Native_GetClientExp);
-			CreateNative("Cmod_SetExp", Xp_Native_SetClientExp);
-			CreateNative("Cmod_AddExp", Xp_Native_AddClientExp);
+			CreateNative("Cmod_GetClientExp", Xp_Native_GetClientExp);
+			CreateNative("Cmod_SetClientExp", Xp_Native_SetClientExp);
+			CreateNative("Cmod_AddClientExp", Xp_Native_AddClientExp);
 			CreateNative("Cmod_GetBonusExp", Xp_Native_GetClientBonusExp);
 			CreateNative("Cmod_SetBonusExp", Xp_Native_SetClientBonusExp);
 			CreateNative("Cmod_AddBonusExp", Xp_Native_AddClientBonusExp);
