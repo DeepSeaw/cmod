@@ -74,6 +74,22 @@ public Class_Native_SetClassDEX(Handle:plugin, numParams){
 	g_iCmodClassDEX[GetNativeCell(1)] = GetNativeCell(2);
 }
 
+public Class_Native_AddClassINT(Handle:plugin, numParams){
+	g_iCmodClassINT[GetNativeCell(1)] += GetNativeCell(2);
+}
+
+public Class_Native_AddClassCON(Handle:plugin, numParams){
+	g_iCmodClassCON[GetNativeCell(1)] += GetNativeCell(2);
+}
+
+public Class_Native_AddClassSTR(Handle:plugin, numParams){
+	g_iCmodClassSTR[GetNativeCell(1)] += GetNativeCell(2);
+}
+
+public Class_Native_AddClassDEX(Handle:plugin, numParams){
+	g_iCmodClassDEX[GetNativeCell(1)] += GetNativeCell(2);
+}
+
 public Class_Native_GetClassWeapons(Handle:plugin, numParams){
 	#if defined CLASS_WEAPONS
 		return _:g_hCmodClassWeapons[GetNativeCell(1)];

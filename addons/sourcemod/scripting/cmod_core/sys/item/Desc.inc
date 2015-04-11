@@ -49,7 +49,15 @@ public Item_Desc_OnPluginStart(){
 
 public Action:Item_Desc_Cmd(client, args){
 	if(g_iCmodPlayerItem[client]){
-		PrintToChat(client, "\x01\x0B\x01 \x06perk:\x03%s \x06opis: \x03%s", g_sCmodItemName[g_iCmodPlayerItem[client]], g_sCmodItemDesc[g_iCmodPlayerItem[client]]);
+		decl	String:_buffer[MAX_DESC_LONG+1];
+		decl	String:_buffer2[4];
+		
+		_buffer = g_sCmodItemDesc[g_iCmodPlayerItem[client]];
+				
+		IntToString(g_iCmodPlayerItemValue[client], _buffer2, sizeof(_buffer2));
+		ReplaceString(_buffer, sizeof(_buffer), "#", _buffer2, false);
+		
+		PrintToChat(client, "\x01\x0B\x01 \x06perk:\x03%s \x06opis: \x03%s", g_sCmodItemName[g_iCmodPlayerItem[client]], _buffer);
 	}else{
 		PrintToChat(client, "\x01\x0B\x01 \x07%s \x06Nie posiadasz żadnego \x03itemu\x06, aby zdobyć item musisz kogoś zabić!", MOD_TAG); 
 	}

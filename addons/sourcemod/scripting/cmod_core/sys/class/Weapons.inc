@@ -97,6 +97,7 @@ public Action:Class_Weapons_EventItemPickup(client, weapon){
 	GetEdictClassname(weapon, _buffer, sizeof(_buffer));
 	
 	if(Class_Weapons_CheckPlayerWeapon(client, _buffer)){
+		AcceptEntityInput(weapon, "Kill");
 		return Plugin_Handled;
 	}
 	

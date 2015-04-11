@@ -75,3 +75,6 @@ stock	Handle:g_hCmodSQL;
 stock	String:g_sCmodSQLError[DB_ERROR_BUFFER_SIZE+1];
 
 stock	Float:g_iCmodSpeed[MAXPLAYERS+1];
+
+stock	Handle:g_hCmodEvLvlUp,
+		Handle:g_hCmodEvLvlDown;

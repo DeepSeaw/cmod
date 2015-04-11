@@ -3,6 +3,10 @@
 #endif
 #define _cmod_included
 
+#if !defined _sdkhooks_included
+#include <sdkhooks>
+#endif
+
 #define CMOD_DISABLE -1
 #define CMOD_CONTINUE 0
 #define MOD_TAG "[Cmod]"
@@ -26,37 +30,55 @@ native Cmod_GetClientPoint(const client);
 
 native Cmod_SetClientPoint(const client, const value);
 
+native Cmod_AddClientPoint(const client, const value);
+
 native Cmod_GetClientINT(const client);
 
 native Cmod_SetClientINT(const client, const value);
+
+native Cmod_AddClientINT(const client, const value);
 
 native Cmod_GetClientCON(const client);
 
 native Cmod_SetClientCON(const client, const value);
 
+native Cmod_AddClientCON(const client, const value);
+
 native Cmod_GetClientSTR(const client);
 
 native Cmod_SetClientSTR(const client, const value);
+
+native Cmod_AddClientSTR(const client);
 
 native Cmod_GetClientDEX(const client);
 
 native Cmod_SetClientDEX(const client, const value);
 
+native Cmod_AddClientDEX(const client, const value);
+
 native Cmod_GetBonusINT(const client);
 
 native Cmod_SetBonusINT(const client, const value);
+
+native Cmod_AddBonusINT(const client, const value);
 
 native Cmod_GetBonusCON(const client);
 
 native Cmod_SetBonusCON(const client, const value);
 
+native Cmod_AddBonusCON(const client, const value);
+
 native Cmod_GetBonusSTR(const client);
 
 native Cmod_SetBonusSTR(const client, const value);
 
+native Cmod_AddBonusSTR(const client, const value);
+
 native Cmod_GetBonusDEX(const client);
 
 native Cmod_SetBonusDEX(const client, const value);
+
+native Cmod_AddBonusDEX(const client, const value);
 
 native Cmod_GetClassINT(const ClassID:id);
 
@@ -74,6 +96,14 @@ native Cmod_SetClassSTR(const ClassID:id, const value);
 
 native Cmod_SetClassDEX(const ClassID:id, const value);
 
+native Cmod_AddClassINT(const ClassID:id, const value);
+
+native Cmod_AddClassCON(const ClassID:id, const value);
+
+native Cmod_AddClassSTR(const ClassID:id, const value);
+
+native Cmod_AddClassDEX(const ClassID:id, const value);
+
 native Cmod_ResetPlayerStats(const client);
 
 native Cmod_ShowStatsMenu(const client);
@@ -86,13 +116,17 @@ native Float:Cmod_GetResistance(const client);
  * ----------------------------------------
  */
   
-native Cmod_GetClientExp(const client);
+native Cmod_GetExp(const client);
 
-native Cmod_SetClientExp(const client, const value);
+native Cmod_SetExp(const client, const value);
 
-native Cmod_GetClientBonusExp(const client);
+native Cmod_AddExp(const client, const value);
 
-native Cmod_SetClientBonusExp(const client, const value);
+native Cmod_GetBonusExp(const client);
+
+native Cmod_SetBonusExp(const client, const value);
+
+native Cmod_AddBonusExp(const client, const value);
 
 native Cmod_GetExpForLvl(const lvl);
 
@@ -131,6 +165,10 @@ forward Cmod_OnClassDisabled(client, ClassID:id);
 forward Cmod_OnClientUseSkill(client, ClassID:id);
 
 forward Cmod_OnGetNewClassID(ClassID:oldId, ClassID:newId);
+
+forward Cmod_OnClientLvlUp(client, lvl);
+
+forward Cmod_OnClientLvlDown(client, lvl);
  
 /** 
  * ----------------------------------------
@@ -179,7 +217,7 @@ forward Cmod_OnClientUseItem(client, ItemID:id);
 stock Cmod_GetINT(const client){
 	new _point;
 	_point += Cmod_GetClientINT(client);
-	_point += Cmod_GetClassINT(client);
+	_point += Cmod_GetClassINT(Cmod_GetClientClass(client));
 	_point += Cmod_GetBonusINT(client);
 	return _point;
 }
@@ -187,7 +225,7 @@ stock Cmod_GetINT(const client){
 stock Cmod_GetCON(const client){
 	new _point;
 	_point += Cmod_GetClientCON(client);
-	_point += Cmod_GetClassCON(client);
+	_point += Cmod_GetClassCON(Cmod_GetClientClass(client));
 	_point += Cmod_GetBonusCON(client);
 	return _point;
 }
@@ -195,7 +233,7 @@ stock Cmod_GetCON(const client){
 stock Cmod_GetSTR(const client){
 	new _point;
 	_point += Cmod_GetClientSTR(client);
-	_point += Cmod_GetClassSTR(client);
+	_point += Cmod_GetClassSTR(Cmod_GetClientClass(client));
 	_point += Cmod_GetBonusSTR(client);
 	return _point;
 }
@@ -203,7 +241,7 @@ stock Cmod_GetSTR(const client){
 stock Cmod_GetDEX(const client){
 	new _point;
 	_point += Cmod_GetClientDEX(client);
-	_point += Cmod_GetClassDEX(client);
+	_point += Cmod_GetClassDEX(Cmod_GetClientClass(client));
 	_point += Cmod_GetBonusDEX(client);
 	return _point;
 }

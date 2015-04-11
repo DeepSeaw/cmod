@@ -199,7 +199,7 @@ enum ModuleToggleQuery
 #define PROJECT_DESCRIPTION "Cmod Rpg system"
 
 // http://wiki.eclipse.org/Version_Numbering
-#define PROJECT_VERSION     "0.2.5"
+#define PROJECT_VERSION     "0.2.6"
 
 // Any URL associated with the project.
 #define PROJECT_URL "http://steamcommunity.com/id/plx211"
