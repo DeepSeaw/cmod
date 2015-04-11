@@ -165,6 +165,10 @@ forward Cmod_OnClassDisabled(client, ClassID:id);
 forward Cmod_OnClientUseSkill(client, ClassID:id);
 
 forward Cmod_OnGetNewClassID(ClassID:oldId, ClassID:newId);
+
+forward Cmod_OnClientLvlUp(client, lvl);
+
+forward Cmod_OnClientLvlDown(client, lvl);
  
 /** 
  * ----------------------------------------

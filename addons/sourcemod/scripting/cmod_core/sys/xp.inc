@@ -52,6 +52,9 @@ public XpSys_OnPluginStart()
 	g_hCmodMaxLvl = CreateConVar("cmod_maxlvl", "200", "Max lvl");
 	g_hCmodLvlRatio = CreateConVar("cmod_lvlratio", "35", "exp for 1st lvl");
 	
+	g_hCmodEvLvlUp = CreateGlobalForward("Cmod_OnClientLvlUp", ET_Ignore, Param_Cell, Param_Cell);
+	g_hCmodEvLvlDown = CreateGlobalForward("Cmod_OnClientLvlDown", ET_Ignore, Param_Cell, Param_Cell);
+	
 	AutoExecConfig(true, "cmod");
 }
 
@@ -135,6 +138,12 @@ XpSys_CheckLvl(client){
 			Stats_Reset_Start(client);
 		#endif
 		PrintToChat(client, "\x01\x0B\x01 \x07%s \x06Spadłeś na \x03%d \x06poziom!", MOD_TAG, g_iCmodLvl[client]);
+		
+		Call_StartForward(g_hCmodEvLvlDown);
+		Call_PushCell(client);
+		Call_PushCell(g_iCmodLvl[client]);
+		Call_Finish();
+		
 	}else if(_bLvlUp){
 		
 		#if defined STATS_MENU
@@ -143,6 +152,11 @@ XpSys_CheckLvl(client){
 		#endif 
 		
 		PrintToChat(client, "\x01\x0B\x01 \x07%s \x06Awansowałeś na \x03%d \x06poziom!", MOD_TAG, g_iCmodLvl[client]);
+		
+		Call_StartForward(g_hCmodEvLvlUp);
+		Call_PushCell(client);
+		Call_PushCell(g_iCmodLvl[client]);
+		Call_Finish();
 	}
 }
 
