@@ -9,12 +9,20 @@ public Stats_Native_SetPlayerPoint(Handle:plugin, numParams){
 	g_iCmodPlayerPoint[GetNativeCell(1)] = GetNativeCell(2); 
 }
 
+public Stats_Native_AddPlayerPoint(Handle:plugin, numParams){
+	g_iCmodPlayerPoint[GetNativeCell(1)] += GetNativeCell(2); 
+}
+
 public Stats_Native_GetPlayerINT(Handle:plugin, numParams){
 	return g_iCmodPlayerINT[GetNativeCell(1)]; 
 }
 
 public Stats_Native_SetPlayerINT(Handle:plugin, numParams){
 	g_iCmodPlayerINT[GetNativeCell(1)] = GetNativeCell(2); 
+}
+
+public Stats_Native_AddPlayerINT(Handle:plugin, numParams){
+	g_iCmodPlayerINT[GetNativeCell(1)] += GetNativeCell(2); 
 }
 
 public Stats_Native_GetPlayerCON(Handle:plugin, numParams){
@@ -25,12 +33,20 @@ public Stats_Native_SetPlayerCON(Handle:plugin, numParams){
 	g_iCmodPlayerCON[GetNativeCell(1)] = GetNativeCell(2); 
 }
 
+public Stats_Native_AddPlayerCON(Handle:plugin, numParams){
+	g_iCmodPlayerCON[GetNativeCell(1)] += GetNativeCell(2); 
+}
+
 public Stats_Native_GetPlayerSTR(Handle:plugin, numParams){
 	return g_iCmodPlayerSTR[GetNativeCell(1)]; 
 }
 
 public Stats_Native_SetPlayerSTR(Handle:plugin, numParams){
 	g_iCmodPlayerSTR[GetNativeCell(1)] = GetNativeCell(2); 
+}
+
+public Stats_Native_AddPlayerSTR(Handle:plugin, numParams){
+	g_iCmodPlayerSTR[GetNativeCell(1)] += GetNativeCell(2); 
 }
 
 public Stats_Native_GetPlayerDEX(Handle:plugin, numParams){
@@ -41,12 +57,20 @@ public Stats_Native_SetPlayerDEX(Handle:plugin, numParams){
 	g_iCmodPlayerDEX[GetNativeCell(1)] = GetNativeCell(2); 
 }
 
+public Stats_Native_AddPlayerDEX(Handle:plugin, numParams){
+	g_iCmodPlayerDEX[GetNativeCell(1)] += GetNativeCell(2); 
+}
+
 public Stats_Native_GetBonusINT(Handle:plugin, numParams){
 	return g_iCmodBonusINT[GetNativeCell(1)]; 
 }
 
 public Stats_Native_SetBonusINT(Handle:plugin, numParams){
 	g_iCmodBonusINT[GetNativeCell(1)] = GetNativeCell(2); 
+}
+
+public Stats_Native_AddBonusINT(Handle:plugin, numParams){
+	g_iCmodBonusINT[GetNativeCell(1)] += GetNativeCell(2); 
 }
 
 public Stats_Native_GetBonusCON(Handle:plugin, numParams){
@@ -57,6 +81,10 @@ public Stats_Native_SetBonusCON(Handle:plugin, numParams){
 	g_iCmodBonusCON[GetNativeCell(1)] = GetNativeCell(2); 
 }
 
+public Stats_Native_AddBonusCON(Handle:plugin, numParams){
+	g_iCmodBonusCON[GetNativeCell(1)] += GetNativeCell(2); 
+}
+
 public Stats_Native_GetBonusSTR(Handle:plugin, numParams){
 	return g_iCmodBonusSTR[GetNativeCell(1)]; 
 }
@@ -65,12 +93,20 @@ public Stats_Native_SetBonusSTR(Handle:plugin, numParams){
 	g_iCmodBonusSTR[GetNativeCell(1)] = GetNativeCell(2); 
 }
 
+public Stats_Native_AddBonusSTR(Handle:plugin, numParams){
+	g_iCmodBonusSTR[GetNativeCell(1)] += GetNativeCell(2); 
+}
+
 public Stats_Native_GetBonusDEX(Handle:plugin, numParams){
 	return g_iCmodBonusDEX[GetNativeCell(1)]; 
 }
 
 public Stats_Native_SetBonusDEX(Handle:plugin, numParams){
 	g_iCmodBonusDEX[GetNativeCell(1)] = GetNativeCell(2); 
+}
+
+public Stats_Native_AddBonusDEX(Handle:plugin, numParams){
+	g_iCmodBonusDEX[GetNativeCell(1)] += GetNativeCell(2); 
 }
 
 public Stats_Native_ResetPlayerStats(Handle:plugin, numParams){
@@ -86,7 +122,7 @@ public Stats_Native_ShowStatsMenu(Handle:plugin, numParams){
 }
 
 public Stats_Native_GetResistance(Handle:plugin, numParams){
-	return _:FloatMul(float(Stats_GetSTR(GetNativeCell(1))), 0.002); 
+	return _:FloatMul(float(Stats_GetSTR(GetNativeCell(1))), 0.002);
 }
 
 

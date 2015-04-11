@@ -60,22 +60,31 @@ public APLRes:AskPluginLoad2(Handle:myself, bool:late, String:error[], err_max)
 		#if defined STATS_NATIVE
 			CreateNative("Cmod_GetClientPoint", Stats_Native_GetPlayerPoint);
 			CreateNative("Cmod_SetClientPoint", Stats_Native_SetPlayerPoint);
+			CreateNative("Cmod_AddClientPoint", Stats_Native_AddPlayerPoint);
 			CreateNative("Cmod_GetClientINT", Stats_Native_GetPlayerINT);
 			CreateNative("Cmod_SetClientINT", Stats_Native_SetPlayerINT);
+			CreateNative("Cmod_AddClientINT", Stats_Native_AddPlayerINT);
 			CreateNative("Cmod_GetClientCON", Stats_Native_GetPlayerCON);
 			CreateNative("Cmod_SetClientCON", Stats_Native_SetPlayerCON);
+			CreateNative("Cmod_AddClientCON", Stats_Native_AddPlayerCON);
 			CreateNative("Cmod_GetClientSTR", Stats_Native_GetPlayerSTR);
 			CreateNative("Cmod_SetClientSTR", Stats_Native_SetPlayerSTR);
+			CreateNative("Cmod_AddClientSTR", Stats_Native_AddPlayerSTR);
 			CreateNative("Cmod_GetClientDEX", Stats_Native_GetPlayerDEX);
 			CreateNative("Cmod_SetClientDEX", Stats_Native_SetPlayerDEX);
+			CreateNative("Cmod_AddClientDEX", Stats_Native_AddPlayerDEX);
 			CreateNative("Cmod_GetBonusINT", Stats_Native_GetBonusINT);
 			CreateNative("Cmod_SetBonusINT", Stats_Native_SetBonusINT);
+			CreateNative("Cmod_AddBonusINT", Stats_Native_AddBonusINT);
 			CreateNative("Cmod_GetBonusCON", Stats_Native_GetBonusCON);
 			CreateNative("Cmod_SetBonusCON", Stats_Native_SetBonusCON);
+			CreateNative("Cmod_AddBonusCON", Stats_Native_AddBonusCON);
 			CreateNative("Cmod_GetBonusSTR", Stats_Native_GetBonusSTR);
 			CreateNative("Cmod_SetBonusSTR", Stats_Native_SetBonusSTR);
+			CreateNative("Cmod_AddBonusSTR", Stats_Native_AddBonusSTR);
 			CreateNative("Cmod_GetBonusDEX", Stats_Native_GetBonusDEX);
 			CreateNative("Cmod_SetBonusDEX", Stats_Native_SetBonusDEX);
+			CreateNative("Cmod_AddBonusDEX", Stats_Native_AddBonusDEX);
 			CreateNative("Cmod_ResetPlayerStats", Stats_Native_ResetPlayerStats);
 			CreateNative("Cmod_ShowStatsMenu", Stats_Native_ShowStatsMenu);
 			CreateNative("Cmod_GetResistance", Stats_Native_GetResistance);
@@ -84,10 +93,12 @@ public APLRes:AskPluginLoad2(Handle:myself, bool:late, String:error[], err_max)
 	
 	#if defined XP_SYS
 		#if defined XP_NATIVE
-			CreateNative("Cmod_GetClientExp", Xp_Native_GetClientExp);
-			CreateNative("Cmod_SetClientExp", Xp_Native_SetClientExp);
-			CreateNative("Cmod_GetClientBonusExp", Xp_Native_GetClientBonusExp);
-			CreateNative("Cmod_SetClientBonusExp", Xp_Native_SetClientBonusExp);
+			CreateNative("Cmod_GetExp", Xp_Native_GetClientExp);
+			CreateNative("Cmod_SetExp", Xp_Native_SetClientExp);
+			CreateNative("Cmod_AddExp", Xp_Native_AddClientExp);
+			CreateNative("Cmod_GetBonusExp", Xp_Native_GetClientBonusExp);
+			CreateNative("Cmod_SetBonusExp", Xp_Native_SetClientBonusExp);
+			CreateNative("Cmod_AddBonusExp", Xp_Native_AddClientBonusExp);
 			CreateNative("Cmod_GetExpForLvl", Xp_Native_GetExpForLvl);
 			CreateNative("Cmod_CheckClientLvl", Xp_Native_CheckClientLvl);
 		#endif
@@ -110,6 +121,10 @@ public APLRes:AskPluginLoad2(Handle:myself, bool:late, String:error[], err_max)
 			CreateNative("Cmod_SetClassCON", Class_Native_SetClassCON);
 			CreateNative("Cmod_SetClassSTR", Class_Native_SetClassSTR);
 			CreateNative("Cmod_SetClassDEX", Class_Native_SetClassDEX);
+			CreateNative("Cmod_AddClassINT", Class_Native_AddClassINT);
+			CreateNative("Cmod_AddClassCON", Class_Native_AddClassCON);
+			CreateNative("Cmod_AddClassSTR", Class_Native_AddClassSTR);
+			CreateNative("Cmod_AddClassDEX", Class_Native_AddClassDEX);
 			
 			CreateNative("Cmod_GetClassWeapons", Class_Native_GetClassWeapons);
 			CreateNative("Cmod_GetClientWeapons", Class_Native_GetClientWeapons);

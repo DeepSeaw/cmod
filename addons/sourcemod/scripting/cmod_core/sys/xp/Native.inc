@@ -16,6 +16,14 @@ public Xp_Native_SetClientExp(Handle:plugin, numParams){
 	return false;
 }
 
+public Xp_Native_AddClientExp(Handle:plugin, numParams){
+	if(1 <= GetNativeCell(1) && GetNativeCell(1) <= MaxClients && IsClientConnected(GetNativeCell(1)) && IsClientInGame(GetNativeCell(1))){
+		g_iCmodExp[GetNativeCell(1)] += GetNativeCell(2);
+		return true;
+	}
+	return false;
+}
+
 public Xp_Native_GetClientBonusExp(Handle:plugin, numParams){
 	if(1 <= GetNativeCell(1) && GetNativeCell(1) <= MaxClients && IsClientConnected(GetNativeCell(1)) && IsClientInGame(GetNativeCell(1))){
 		return g_iCmodBonusExp[GetNativeCell(1)];
@@ -26,6 +34,14 @@ public Xp_Native_GetClientBonusExp(Handle:plugin, numParams){
 public Xp_Native_SetClientBonusExp(Handle:plugin, numParams){
 	if(1 <= GetNativeCell(1) && GetNativeCell(1) <= MaxClients && IsClientConnected(GetNativeCell(1)) && IsClientInGame(GetNativeCell(1))){
 		g_iCmodBonusExp[GetNativeCell(1)] = GetNativeCell(2);
+		return true;
+	}
+	return false;
+}
+
+public Xp_Native_AddClientBonusExp(Handle:plugin, numParams){
+	if(1 <= GetNativeCell(1) && GetNativeCell(1) <= MaxClients && IsClientConnected(GetNativeCell(1)) && IsClientInGame(GetNativeCell(1))){
+		g_iCmodBonusExp[GetNativeCell(1)] += GetNativeCell(2);
 		return true;
 	}
 	return false;
